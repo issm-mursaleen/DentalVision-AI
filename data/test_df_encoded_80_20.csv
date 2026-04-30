@@ -1,0 +1,495 @@
+image_path,nature,site,label
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00018_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00001_W_LB.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00087_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00157_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00020_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA000252_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00006_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00225_W_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00202_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA000232_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00228_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00154_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00190_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00276_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00213_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00265_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00152_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA000235_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00228_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00242_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\6 - DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00294_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00022_R_RB.jpg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\7 - DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00024-1_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00044_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00218_W_LB2.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00019_R_LB.JPG,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00223_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00226_W_LL.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00305_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00202_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00191_R_LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00058_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00259_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00147_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00172_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00321_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00086_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00202_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00048_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00114_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00275_W_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00204_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00021_R_UA.JPG,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00141_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00157_R_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00172_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00016_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00011_R_DT.JPG,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00281_W_LB.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00015_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00166_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00180_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA000233_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00075_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00215_W_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00051_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00327_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00318_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00024-1_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00070_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00128_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00067_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00218_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00339_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA00083_R_DT.jpg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA000249_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00262_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00344_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\5 - DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00161_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00212_R_LB2.jpeg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00205_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00284_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00104_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00020_R_UA.JPG,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00305_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00262_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00181_W_LB.jpg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00323_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00001_W_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00263_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00069_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00207_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00010_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00111_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00148_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00308_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA000256_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00326_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00215_W_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00178_W_LB.jpg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00055_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00072_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00272_W_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00081_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA00262_R_DT.jpeg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA000249_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00155_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00056_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00018_W_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00319_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00253_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00002_W_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00215_W_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00330_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00027-1_R_DT.JPG,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA000256_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00319_R__LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00313_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00170_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00186_W_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00166_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00179_W_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00313_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00218_W_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\5 - LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00109_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00296_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00019_R_DT.JPG,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00117_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00185_W_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00316_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00016_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00258_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00161_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00007_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00264_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00286_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00264_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00259_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00280_W_LB.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00193_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00126_R_LL2.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00016_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00155_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00082_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00127_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00036_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00331_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA000239_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00193_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00076_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA00002_W_DT.jpeg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00231_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00128_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00229_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\6 - UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00284_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00060_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00314_R__UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00021_W_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00005_W_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00012_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00127_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00288_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00329_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00025-1_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00261_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00152_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00291_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00338_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00154_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00112_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00288_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00017_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00186_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00333_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00003_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00013_R_UA.JPG,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00203_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00155_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00108_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\02. Ventral tongue\SMITA00194_R_VT.jpeg,Var,Ventral tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00168_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00158_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00035_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00282_W_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00128_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00066_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00270_W_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00113_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00027-1_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA000239_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00167_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00186_W_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00271_W_RB.jpg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA000239_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00160_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA000232_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00345_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00294_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00216_W_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00329_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00251_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00178_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00303_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00224_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00061_R-DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00217_W_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA000234_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00125_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00115_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00050_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA000221_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00012_W_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00064_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00062_R_RB1.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\04. Oral Cancer\01. Unannotated\04. Right buccal mucosa\Ca 8.png,OC,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00204_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00141_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00089_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00284_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00167_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00154_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00006_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00244_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00045_R_RB.JPG,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00257_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00245_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00346_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00025-1_R_RB.JPG,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00019_R_RB.JPG,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00253_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00162_R_RB.jpeg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00309_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00025-1_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00015_W_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00327_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00132_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00206_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00165_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00185_W_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00174_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA000232_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00265_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00047_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00005_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA000221_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00026_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00028_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00058_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00082_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00050_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00162_R_LB.jpeg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00283_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00334_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00309_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00017_W_RB.jpg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00217_W_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00215_W_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00299_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\5 - LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00114_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00164_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00006_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\07. Upper arch\SMITA00287_R_UA.jpg,Var,Upper arch,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00089_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00080_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00307_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA000237_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00018_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00211_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00137_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00148_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00236_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00190_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00171_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00040_R_RB.JPG,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00107_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00012_W_LB1.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00004_W_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00160_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00007_W_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA000239_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00215_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00002_W_LB3.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00339_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00137_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00288_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00216_W_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00212_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00285_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00168_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00041_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00238_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00289_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00194_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00158_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00089_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA000243_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00058_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00152_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00164_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00290_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00203_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00126_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00299_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA000232_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00269_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00298_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\07. Upper arch\SMITA00133_R_UA.jpg,Var,Upper arch,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00072_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00066_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00066_R-UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA000247_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00075_R_LB.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00041_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00324_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\06. Lower lip\SMITA00272_W_LL.jpeg,OPMD,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00218_W_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00302_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA000249_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00323_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00345_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00034_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00114_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00314_R__UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00015_W_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\04. Oral Cancer\01. Unannotated\02. Ventral tongue\Ca 2.jpg,OC,Ventral tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00089_R_LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00126_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00222_W_LL2.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00132_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00322_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00201_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00011_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00343_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00297_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00174_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00133_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00151_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00211_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00012_W_LB.jpeg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00303_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00105_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00041_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00036_R_RB.JPG,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00337_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00192_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00113_R_LB2.jpeg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00186_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00044_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00287_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00110_R_LL.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00203_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00325_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00042_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00183_W_LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00310_R_LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00039_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00315_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00170_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00246_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00176_W_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00300_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\06. Lower lip\SMITA00181_W_LL.jpg,OPMD,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00228_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00343_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00270_W_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00316_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA000249_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00071_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00058_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\6 - LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA000233_R_LB2.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA000235_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00158_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00196_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00075_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00278_W_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00112_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00245_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00142_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00222_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00228_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA00195_R_DT.jpeg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00040_R_UA.JPG,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00210_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00223_W_LL2.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00322_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00218_W_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00090_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00296_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00262_R_RB2.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00044_R_RB.JPG,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00146_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00131_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00134_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00190_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00320_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00287_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00158_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00008_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\07. Upper arch\SMITA00058_R_UA.jpeg,Var,Upper arch,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00315_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00310_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00319_R__LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00295_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00305_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00141_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00268_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00027_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00025-1_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\04. Right buccal mucosa\SMITA00021_W_RB.jpeg,OPMD,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00258_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00115_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00297_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00001_W_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00267_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00055_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00192_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00163_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00163_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00201_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00295_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00216_W_LB1.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00221_W_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00244_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00035_R_UL.JPG,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA000247_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00183_W_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\8 -VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00311_R__LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00274_W_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00031_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00181_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00261_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00048_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00327_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00172_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00042_R_LB.JPG,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00128_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00314_R__LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00199_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\04. Oral Cancer\01. Unannotated\02. Ventral tongue\6765.jpg,OC,Ventral tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\03. Left buccal mucosa\SMITA00017_W_LB.jpg,Var,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00022_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00072_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00272_W_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00035_R_UA.JPG,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA000252_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00125_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00325_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00213_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00177_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00324_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00009_R_LA.JPG,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00038_R_LL.JPG,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00089_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00291_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00184_W_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00315_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00014_R_VT.JPG,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00240_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00111_R_RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00263_R_DT.jpeg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\04. Right buccal mucosa\SMITA00314_R__RB.jpg,Var,Right buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA00310_R_UA.jpg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\07. Upper arch\SMITA000239_R_UA.jpeg,Normal,Upper arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00149_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA000243_R_DT.jpeg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00176_W_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00086_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00028_R_RB.JPG,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00021_W_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00174_R_RB.jpg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00261_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00137_R_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00285_R_LL.jpeg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00245_R_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00004_W_LB.jpeg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00092_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\06. Lower lip\SMITA00220_W_LL2.jpeg,Var,Lower lip,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00221_W_LB.jpeg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00248_R_LA.jpg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00009_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA00334_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA000241_R_LA.jpeg,Normal,Lower arch,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00238_R_LB.jpg,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00194_R_UL.jpeg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\04. Right buccal mucosa\SMITA000230_R_RB.jpeg,Normal,Right buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00025-1_R_DT.JPG,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\01. Dorsal tongue\SMITA00238_R_DT.jpg,Normal,Dorsal tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\03. OPMD\01. Unannotated\03. Left buccal mucosa\SMITA00034_R_LB.JPG,OPMD,Left buccal mucosa,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\06. Lower lip\SMITA00246_R_LL.jpg,Normal,Lower lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\07. Upper arch\SMITA00211_R_UA.jpg,Var,Upper arch,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00270_W_VT.jpg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\05. Upper lip\SMITA00213_R_UL.jpg,Normal,Upper lip,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\02. Variation from normal\01. Unannotated\01. Dorsal tongue\SMITA00201_R_DT.jpeg,Var,Dorsal tongue,1
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\02. Ventral tongue\SMITA00105_R_VT.jpeg,Normal,Ventral tongue,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\03. Left buccal mucosa\SMITA00080_R_LB.jpg,Normal,Left buccal mucosa,0
+D:\Mursaleen\Mursaleen\6th semester\Computer Vision\project\SMART-OM\01. Normal\01. Unannotated\08. Lower arch\SMITA00295_R_LA.jpeg,Normal,Lower arch,0

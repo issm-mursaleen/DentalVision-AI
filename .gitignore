@@ -1,0 +1,54 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.env
+
+# Model weights (too large for GitHub — keep locally)
+models/
+*.pth
+*.pkl
+*.pt
+
+# Datasets (too large for GitHub)
+SMART-OM/
+SMART-OM.rar
+cavity-dataset/
+
+# Training run artifacts
+runs/
+
+# Node
+node_modules/
+app/node_modules/
+frontend/node_modules/
+oral-frontend/node_modules/
+
+# Build outputs
+app/dist/
+frontend/build/
+oral-frontend/build/
+
+# SQLite databases
+*.db
+
+# IDE / OS
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Original nested project (contents already copied to app/, backends/, training/)
+TOOTH PROJECT/
+
+# Misc
+gradcam_output.jpg
