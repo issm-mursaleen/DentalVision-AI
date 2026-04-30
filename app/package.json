@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "html2pdf.js": "^0.14.0",
