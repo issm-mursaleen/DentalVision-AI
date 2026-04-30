@@ -12,6 +12,7 @@ from typing import List
 import torch
 import cv2
 import numpy as np
+from dotenv import load_dotenv
 from PIL import Image, UnidentifiedImageError
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -23,6 +24,20 @@ from pytorch_grad_cam.utils.model_targets import ClassifierOutputTarget
 _ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append(_ROOT)
 from ml.model import get_model
+
+load_dotenv(os.path.join(_ROOT, '.env'))
+
+# ── Supabase (optional — oral predictions logged if keys present) ──────────────
+_SUPABASE_URL = os.environ.get("SUPABASE_URL")
+_SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
+_sb = None
+if _SUPABASE_URL and _SUPABASE_KEY:
+    try:
+        from supabase import create_client
+        _sb = create_client(_SUPABASE_URL, _SUPABASE_KEY)
+        print("[oral] Supabase client initialised — predictions will be logged.")
+    except Exception as e:
+        print(f"[oral] Supabase init failed: {e}. Continuing without logging.")
 
 # --- Config ---------------------------------------------------------------
 # Stage 1: binary (Normal vs Abnormal)
