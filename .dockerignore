@@ -1,0 +1,62 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Python
+venv/
+env/
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.tox/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Node
+node_modules/
+app/node_modules/
+frontend/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Testing
+.coverage
+htmlcov/
+
+# Datasets (local only, not needed in container)
+SMART-OM/
+cavity-dataset/
+data/
+TOOTH\ PROJECT/
+
+# Build artifacts
+runs/
+models/*.pkl
+models/*.pth
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
+*.pot
+*.mo

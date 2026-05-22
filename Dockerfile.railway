@@ -1,0 +1,48 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies required by OpenCV and other libraries
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender1 \
+    libgomp1 \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first (for better Docker cache)
+# Use production-only requirements if available, otherwise use the full requirements
+COPY requirements-api.txt requirements.txt* ./
+
+# Install Python dependencies with optimization flags
+RUN pip install --no-cache-dir --disable-pip-version-check -r requirements-api.txt
+
+# Copy ML modules
+COPY ml/ ./ml/
+
+# Copy backend
+COPY backends/ ./backends/
+
+# Copy models (these are large, so we do it late in the build)
+COPY models/ ./models/
+
+# Copy environment config
+COPY .env.example ./.env
+
+# Set Python to unbuffered mode for better logging
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH=/app
+
+# Expose port (Railway will override with PORT env var)
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:${PORT:-8080}/health || exit 1
+
+# Start the API server
+# Railway provides PORT env var, defaulting to 8080 if not set
+CMD ["sh", "-c", "uvicorn backends.oral.app:app --host 0.0.0.0 --port ${PORT:-8080}"]
