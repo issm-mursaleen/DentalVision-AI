@@ -26,9 +26,6 @@ COPY ml/ ./ml/
 # Copy backend
 COPY backends/ ./backends/
 
-# Copy models (these are large, so we do it late in the build)
-COPY models/ ./models/
-
 # Copy environment config
 COPY .env.example ./.env
 
