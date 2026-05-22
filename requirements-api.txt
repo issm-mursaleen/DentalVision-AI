@@ -1,0 +1,26 @@
+# Core ML dependencies
+torch==2.2.2
+torchvision==0.17.2
+
+# Data handling
+numpy==1.26.4
+pandas==2.2.2
+
+# Computer Vision
+opencv-python==4.9.0.80
+Pillow==10.3.0
+
+# Model explainability
+grad-cam==1.4.8
+
+# Web API
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# Environment & Database
+python-dotenv>=1.0.0
+supabase>=2.3.0
+
+# Utilities
+tqdm==4.66.4

@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.railway
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      PYTHONUNBUFFERED: 1
+      PYTHONPATH: /app
+      MAX_FILE_SIZE_MB: 10
+      # Supabase (optional)
+      # SUPABASE_URL: your-supabase-url
+      # SUPABASE_SERVICE_ROLE_KEY: your-supabase-key
+    volumes:
+      - ./models:/app/models:ro
+      - ./ml:/app/ml:ro
+      - ./backends:/app/backends:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      REACT_APP_API_URL: http://backend:8080
+      NODE_ENV: development
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  models:
