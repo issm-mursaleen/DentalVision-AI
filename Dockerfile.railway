@@ -26,9 +26,6 @@ COPY ml/ ./ml/
 # Copy backend
 COPY backends/ ./backends/
 
-# Copy models (these are large, so we do it late in the build)
-COPY models/ ./models/
-
 # Copy environment config
 COPY .env.example ./.env
 
@@ -46,3 +43,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 # Start the API server
 # Railway provides PORT env var, defaulting to 8080 if not set
 CMD ["sh", "-c", "uvicorn backends.oral.app:app --host 0.0.0.0 --port ${PORT:-8080}"]
+
