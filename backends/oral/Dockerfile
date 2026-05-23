@@ -31,6 +31,14 @@ RUN if [ -f /app/models/oral-binary.pkl ] && grep -q "version https://git-lfs" /
     if [ -f /app/models/oral-binary.pth ] && grep -q "version https://git-lfs" /app/models/oral-binary.pth; then \
         echo "Downloading oral-binary.pth from GitHub LFS..." && \
         curl -L -f -o /app/models/oral-binary.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-binary.pth; \
+    fi && \
+    if [ -f /app/models/oral-disease.pkl ] && grep -q "version https://git-lfs" /app/models/oral-disease.pkl; then \
+        echo "Downloading oral-disease.pkl from GitHub LFS..." && \
+        curl -L -f -o /app/models/oral-disease.pkl https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pkl; \
+    fi && \
+    if [ -f /app/models/oral-disease.pth ] && grep -q "version https://git-lfs" /app/models/oral-disease.pth; then \
+        echo "Downloading oral-disease.pth from GitHub LFS..." && \
+        curl -L -f -o /app/models/oral-disease.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pth; \
     fi
 
 # Add application path to Python Path
