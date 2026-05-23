@@ -259,6 +259,176 @@ const Reports = () => {
     html2pdf().set(opt).from(element).save();
   };
 
+  const downloadOralPDF = (report) => {
+    const finalLabel = report.final_label || report.binary_class || 'Unknown';
+    const finalConf  = (report.disease_confidence ?? report.binary_confidence ?? 0) * 100;
+    const isNormal   = finalLabel === 'Normal';
+    const accent =
+      finalLabel.includes('Cancer')    ? { bg: '#fef2f2', border: '#fecaca', text: '#b91c1c' } :
+      finalLabel.includes('OPMD')      ? { bg: '#fdf2f8', border: '#fbcfe8', text: '#be185d' } :
+      finalLabel.includes('Variation') ? { bg: '#fffbeb', border: '#fde68a', text: '#b45309' } :
+      isNormal                          ? { bg: '#f0fdf4', border: '#bbf7d0', text: '#15803d' } :
+                                          { bg: '#fef2f2', border: '#fecaca', text: '#b91c1c' };
+
+    const interpretation = isNormal
+      ? 'No abnormalities were detected by the binary classifier. The mucosal tissue appears within normal limits based on AI analysis.'
+      : `The binary classifier flagged this image as Abnormal${report.disease_class ? `, and the disease classifier identified the most likely category as "${report.disease_class}"` : ''}. Maximum model confidence was ${finalConf.toFixed(1)}%. Professional oral evaluation and biopsy where indicated are strongly recommended.`;
+
+    const probRow = (name, pct, color) => `
+      <div style="margin-bottom: 10px;">
+        <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
+          <span style="font-weight:600; color:#334155;">${name}</span>
+          <span style="font-family:monospace; color:#64748b;">${pct.toFixed(1)}%</span>
+        </div>
+        <div style="width:100%; height:8px; background:#f1f5f9; border-radius:4px; overflow:hidden;">
+          <div style="height:100%; width:${pct.toFixed(1)}%; background:${color};"></div>
+        </div>
+      </div>`;
+
+    const stage1Html = `
+      ${probRow('Normal',   (report.binary_probs?.[0] ?? 0) * 100, '#10b981')}
+      ${probRow('Abnormal', (report.binary_probs?.[1] ?? 0) * 100, '#ef4444')}`;
+
+    const stage2Html = report.disease_probs ? `
+      <h3 class="section-title" style="border-left-color:#14b8a6;">Stage 2 — Disease Classification</h3>
+      <div class="tech-box">
+        ${probRow('Variation',  (report.disease_probs?.[0] ?? 0) * 100, '#f59e0b')}
+        ${probRow('OPMD',       (report.disease_probs?.[1] ?? 0) * 100, '#ec4899')}
+        ${probRow('Oral Cancer',(report.disease_probs?.[2] ?? 0) * 100, '#ef4444')}
+      </div>` : '';
+
+    const element = document.createElement('div');
+    element.innerHTML = `
+      <style>
+        body { font-family: 'Inter', Arial, sans-serif; color: #1e293b; line-height: 1.5; }
+        .pdf-container { padding: 40px; background: #ffffff; }
+        .header { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2px solid #e2e8f0; padding-bottom:20px; margin-bottom:30px; }
+        .logo-area { display:flex; align-items:center; gap:10px; }
+        .logo-icon { width:40px; height:40px; background:#14b8a6; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; font-size:24px; font-weight:bold; }
+        .logo-text { font-size:24px; font-weight:800; color:#0f172a; margin:0; }
+        .logo-sub { font-size:12px; color:#64748b; font-weight:600; text-transform:uppercase; margin:0; letter-spacing:1px; }
+        .report-meta { text-align:right; }
+        .report-id { font-size:18px; font-weight:700; color:#14b8a6; margin:0; }
+        .report-date { font-size:14px; color:#64748b; margin:5px 0 0 0; }
+        .section-title { font-size:16px; font-weight:700; color:#334155; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:15px; border-left:4px solid #14b8a6; padding-left:10px; }
+        .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:30px; }
+        .grid-3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; margin-bottom:30px; }
+        .card { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; }
+        .card-label { font-size:11px; color:#64748b; text-transform:uppercase; font-weight:700; margin-bottom:5px; }
+        .card-value { font-size:16px; color:#0f172a; font-weight:600; margin:0; }
+        .status-box { background:${accent.bg}; border:1px solid ${accent.border}; border-radius:8px; padding:20px; margin-bottom:30px; }
+        .status-title { font-size:18px; font-weight:700; color:${accent.text}; margin:0 0 10px 0; }
+        .status-text { font-size:14px; color:#334155; margin:0; }
+        .images-section { display:flex; gap:20px; margin-bottom:30px; }
+        .image-card { flex:1; border:1px solid #e2e8f0; border-radius:8px; overflow:hidden; page-break-inside:avoid; }
+        .image-header { background:#f1f5f9; padding:10px; font-size:12px; font-weight:700; color:#475569; text-align:center; border-bottom:1px solid #e2e8f0; }
+        .image-body { padding:10px; background:#ffffff; text-align:center; }
+        .image-body img { max-width:100%; height:auto; border-radius:4px; max-height:280px; object-fit:contain; }
+        .tech-box { background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:15px; margin-bottom:25px; font-size:12px; }
+        .tech-list { margin:0; padding-left:20px; color:#475569; }
+        .tech-list li { margin-bottom:5px; }
+        .disclaimer { font-size:11px; color:#94a3b8; text-align:center; border-top:1px solid #e2e8f0; padding-top:20px; margin-top:40px; page-break-inside:avoid; }
+      </style>
+      <div class="pdf-container">
+        <div class="header">
+          <div class="logo-area">
+            <div class="logo-icon">DV</div>
+            <div>
+              <p class="logo-text">DentalVision AI</p>
+              <p class="logo-sub">Oral Screening Report</p>
+            </div>
+          </div>
+          <div class="report-meta">
+            <p class="report-id">Report #${report.id}</p>
+            <p class="report-date">Generated: ${new Date(report.created_at).toLocaleString()}</p>
+          </div>
+        </div>
+
+        <h3 class="section-title">Session Details</h3>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-label">Source File</div>
+            <p class="card-value" style="font-size:13px; word-break:break-all;">${report.filename || 'image'}</p>
+          </div>
+          <div class="card">
+            <div class="card-label">Analysis Timestamp</div>
+            <p class="card-value">${new Date(report.created_at).toLocaleTimeString()}</p>
+          </div>
+          <div class="card">
+            <div class="card-label">Pipeline</div>
+            <p class="card-value">Two-stage hierarchical</p>
+          </div>
+        </div>
+
+        <h3 class="section-title">Verdict</h3>
+        <div class="grid-2">
+          <div class="card">
+            <div class="card-label">Final Label</div>
+            <p class="card-value" style="font-size:22px; color:${accent.text};">${finalLabel}</p>
+          </div>
+          <div class="card">
+            <div class="card-label">Maximum Confidence</div>
+            <p class="card-value" style="font-size:22px;">${finalConf.toFixed(1)}%</p>
+          </div>
+        </div>
+
+        <div class="status-box">
+          <h4 class="status-title">${isNormal ? 'Within Normal Limits' : 'Abnormality Flagged'}</h4>
+          <p class="status-text">${interpretation}</p>
+        </div>
+
+        <h3 class="section-title">Stage 1 — Binary Classification</h3>
+        <div class="tech-box">
+          ${stage1Html}
+        </div>
+
+        ${stage2Html}
+
+        <h3 class="section-title">Image Analysis</h3>
+        <div class="images-section">
+          <div class="image-card">
+            <div class="image-header">Original Intraoral Image</div>
+            <div class="image-body">
+              <img src="data:image/jpeg;base64,${report.original_img}" />
+            </div>
+          </div>
+          ${report.heatmap_img ? `
+          <div class="image-card">
+            <div class="image-header">Grad-CAM++ Saliency</div>
+            <div class="image-body">
+              <img src="data:image/jpeg;base64,${report.heatmap_img}" />
+            </div>
+          </div>` : ''}
+        </div>
+
+        <h3 class="section-title">Technical Specifications</h3>
+        <div class="tech-box">
+          <ul class="tech-list">
+            <li><strong>Stage 1 model:</strong> ResNet18 (binary — Normal vs Abnormal)</li>
+            <li><strong>Stage 2 model:</strong> ResNet18 mod1 + dropout 0.5 (Variation / OPMD / Oral Cancer)</li>
+            <li><strong>Explainability:</strong> Grad-CAM++ on layer4 (top-quartile activations highlighted)</li>
+            <li><strong>Preprocessing:</strong> Resize 224×224, ImageNet normalization</li>
+          </ul>
+        </div>
+
+        <div class="disclaimer">
+          <strong>DISCLAIMER:</strong> This Artificial Intelligence system is designed for educational and preliminary screening purposes only. It does not replace a professional diagnosis by a licensed clinician. Always consult a qualified healthcare provider for medical advice, biopsy, and treatment.
+          <br/><br/>
+          DentalVision AI &copy; 2026 | Generated Automatically
+        </div>
+      </div>
+    `;
+
+    const opt = {
+      margin:      0,
+      filename:    `DentalVision_OralReport_${report.id}.pdf`,
+      image:       { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF:       { unit: 'in', format: 'letter', orientation: 'portrait' },
+    };
+    html2pdf().set(opt).from(element).save();
+  };
+
   const processedReports = getFilteredAndSortedReports();
 
   return (
@@ -476,6 +646,9 @@ const Reports = () => {
                   <div className="border-t border-slate-100 p-2 flex gap-1 bg-slate-50">
                     <button onClick={() => setSelectedReport(r)} className="flex-1 flex items-center justify-center py-2 text-sm font-semibold text-slate-600 hover:bg-slate-200 hover:text-slate-800 transition-colors rounded">
                       <Eye className="w-4 h-4 mr-1.5" /> View
+                    </button>
+                    <button onClick={() => downloadOralPDF(r)} className="flex items-center justify-center py-2 px-3 text-sm font-semibold text-teal-600 hover:bg-teal-100 transition-colors rounded" title="Download PDF">
+                      <Download className="w-4 h-4" />
                     </button>
                     <button onClick={() => setDeleteId(r.id)} className="flex items-center justify-center py-2 px-3 text-sm font-semibold text-red-500 hover:bg-red-50 transition-colors rounded" title="Delete">
                       <Trash2 className="w-4 h-4" />

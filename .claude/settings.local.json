@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:grand-charm-production-1d31.up.railway.app)"
+    ]
+  }
+}
