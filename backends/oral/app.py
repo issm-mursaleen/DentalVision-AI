@@ -14,7 +14,7 @@ import cv2
 import numpy as np
 from dotenv import load_dotenv
 from PIL import Image, UnidentifiedImageError
-from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi import FastAPI, File, UploadFile, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from torchvision import transforms
 from pytorch_grad_cam import GradCAM, GradCAMPlusPlus
@@ -27,7 +27,7 @@ from ml.model import get_model
 
 load_dotenv(os.path.join(_ROOT, '.env'))
 
-# ── Supabase (optional — oral predictions logged if keys present) ──────────────
+# ── Supabase (oral predictions logged + per-user reports) ────────────────────
 _SUPABASE_URL = os.environ.get("SUPABASE_URL")
 _SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
 _sb = None
@@ -38,6 +38,34 @@ if _SUPABASE_URL and _SUPABASE_KEY:
         print("[oral] Supabase client initialised — predictions will be logged.")
     except Exception as e:
         print(f"[oral] Supabase init failed: {e}. Continuing without logging.")
+
+ORAL_TABLE = "oral_predictions"
+
+
+# ── Auth dependency ───────────────────────────────────────────────────────────
+def get_current_user_id(authorization: str = Header(None)) -> str:
+    """
+    Verify the Supabase JWT and return the authenticated user's id.
+    The service role key bypasses RLS, so this is the only place per-user
+    isolation is enforced for read endpoints.
+    """
+    if _sb is None:
+        raise HTTPException(status_code=503, detail="Supabase not configured on server")
+    if not authorization or not authorization.lower().startswith("bearer "):
+        raise HTTPException(status_code=401, detail="Missing bearer token")
+    token = authorization.split(" ", 1)[1].strip()
+    try:
+        resp = _sb.auth.get_user(token)
+        user = getattr(resp, "user", None)
+        if not user or not getattr(user, "id", None):
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return user.id
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=401, detail=f"Auth failed: {e}")
+
+
 
 # --- Config ---------------------------------------------------------------
 # Stage 1: binary (Normal vs Abnormal)
@@ -184,6 +212,17 @@ def prepare_image(image_bytes: bytes):
 
     tensor_img = _transform(raw_img).unsqueeze(0)
     return tensor_img, raw_img
+
+
+def _encode_for_storage(img: Image.Image, max_side: int = 1024, quality: int = 80) -> str:
+    """Downscale + re-encode an image to base64 JPEG suitable for DB storage."""
+    w, h = img.size
+    scale = min(1.0, max_side / max(w, h))
+    if scale < 1.0:
+        img = img.resize((int(w * scale), int(h * scale)), Image.LANCZOS)
+    buf = io.BytesIO()
+    img.save(buf, format="JPEG", quality=quality, optimize=True)
+    return base64.b64encode(buf.getvalue()).decode("utf-8")
 
 
 def _classify(m: torch.nn.Module, tensor: torch.Tensor):
@@ -365,24 +404,61 @@ def _run_inference(payload: bytes) -> dict:
     except Exception:
         response["heatmap_base64"] = None
 
+    # Encode the (downscaled) original for persistence. Kept separate from the
+    # client-facing response so we don't double the payload over the wire.
+    response["_original_b64_for_storage"] = _encode_for_storage(original_image)
     return response
 
 
+def _persist_prediction(user_id: str, filename: str, result: dict) -> None:
+    """Insert a single prediction into oral_predictions. Best-effort: a failure
+    here logs but does not break the API response."""
+    if _sb is None:
+        return
+    try:
+        row = {
+            "user_id":           user_id,
+            "filename":          filename or "image",
+            "original_img":      result.get("_original_b64_for_storage"),
+            "heatmap_img":       result.get("heatmap_base64"),
+            "binary_class":      result["binary"]["class_name"],
+            "binary_confidence": result["binary"]["confidence_score"],
+            "binary_probs":      result["binary"]["probabilities"],
+            "disease_class":     (result["disease"] or {}).get("class_name") if result.get("disease") else None,
+            "disease_confidence":(result["disease"] or {}).get("confidence_score") if result.get("disease") else None,
+            "disease_probs":     (result["disease"] or {}).get("probabilities") if result.get("disease") else None,
+            "final_label":       result.get("final_label", result["binary"]["class_name"]),
+        }
+        _sb.table(ORAL_TABLE).insert(row).execute()
+    except Exception as e:
+        print(f"[oral] persist failed for {filename}: {e}")
+
+
 @app.post("/predict", tags=["Inference"])
-async def predict(file: UploadFile = File(...)):
+async def predict(
+    file: UploadFile = File(...),
+    user_id: str = Depends(get_current_user_id),
+):
     """Single-image hierarchical prediction with Grad-CAM ROI annotation."""
     payload = await file.read()
     _validate_upload(file, payload)
     try:
-        return await asyncio.to_thread(_run_inference, payload)
+        result = await asyncio.to_thread(_run_inference, payload)
     except HTTPException:
         raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Inference failed: {e}")
 
+    await asyncio.to_thread(_persist_prediction, user_id, file.filename or "image", result)
+    result.pop("_original_b64_for_storage", None)
+    return result
+
 
 @app.post("/predict_batch", tags=["Inference"])
-async def predict_batch(files: List[UploadFile] = File(...)):
+async def predict_batch(
+    files: List[UploadFile] = File(...),
+    user_id: str = Depends(get_current_user_id),
+):
     """
     Multi-image prediction. Each file is run through the same hierarchical
     pipeline as `/predict`. Per-file errors are reported inline, so one bad
@@ -410,6 +486,8 @@ async def predict_batch(files: List[UploadFile] = File(...)):
                     raise ValueError("Empty file")
                 result = _run_inference(data)
                 result["filename"] = fname
+                _persist_prediction(user_id, fname, result)
+                result.pop("_original_b64_for_storage", None)
                 out.append(result)
             except Exception as e:
                 out.append({"filename": fname, "error": str(e)})
@@ -420,6 +498,48 @@ async def predict_batch(files: List[UploadFile] = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Batch inference failed: {e}")
     return {"count": len(results), "predictions": results}
+
+
+# --- Reports: per-user oral prediction history ----------------------------
+
+
+@app.get("/api/reports", tags=["Reports"])
+def list_oral_reports(filter: str = 'all', user_id: str = Depends(get_current_user_id)):
+    """Return oral predictions for the authenticated user, newest first."""
+    if _sb is None:
+        raise HTTPException(status_code=503, detail="Supabase not configured on server")
+    from datetime import datetime, timezone, timedelta
+    now = datetime.now(timezone.utc)
+    q = (
+        _sb.table(ORAL_TABLE)
+        .select("id, created_at, filename, original_img, heatmap_img, "
+                "binary_class, binary_confidence, binary_probs, "
+                "disease_class, disease_confidence, disease_probs, final_label")
+        .eq("user_id", user_id)
+    )
+    if filter == 'today':
+        q = q.gte("created_at", now.replace(hour=0, minute=0, second=0, microsecond=0).isoformat())
+    elif filter == 'week':
+        q = q.gte("created_at", (now - timedelta(days=7)).replace(hour=0, minute=0, second=0, microsecond=0).isoformat())
+    elif filter == 'month':
+        q = q.gte("created_at", now.replace(day=1, hour=0, minute=0, second=0, microsecond=0).isoformat())
+    return q.order("created_at", desc=True).execute().data
+
+
+@app.delete("/api/reports/{report_id}", tags=["Reports"])
+def delete_oral_report(report_id: int, user_id: str = Depends(get_current_user_id)):
+    if _sb is None:
+        raise HTTPException(status_code=503, detail="Supabase not configured on server")
+    res = (
+        _sb.table(ORAL_TABLE)
+        .delete()
+        .eq("id", report_id)
+        .eq("user_id", user_id)
+        .execute()
+    )
+    if not res.data:
+        raise HTTPException(status_code=404, detail="Report not found")
+    return {"message": "Report deleted successfully"}
 
 
 # --- Reference: healthy / unannotated examples for visual comparison -----

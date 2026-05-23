@@ -9,9 +9,33 @@ const pageVariants = { initial: { opacity: 0, y: 15 }, in: { opacity: 1, y: 0 },
 const staggerContainer = { in: { transition: { staggerChildren: 0.1 } } };
 const cardVariants = { initial: { opacity: 0, scale: 0.95 }, in: { opacity: 1, scale: 1 } };
 
+// Normalize accessors so search/sort work for both report shapes.
+const reportDate = (r) => r.date_time || r.created_at;
+const reportConfidence = (r) => {
+  if (typeof r.confidence === 'number') return r.confidence; // cavity
+  // oral: prefer disease confidence (more specific), fall back to binary
+  return r.disease_confidence ?? r.binary_confidence ?? 0;
+};
+const reportSearchText = (r) =>
+  [r.summary, r.final_label, r.filename, r.binary_class, r.disease_class]
+    .filter(Boolean).join(' ').toLowerCase();
+
+const verdictTone = (label) => {
+  if (!label) return 'bg-slate-100 text-slate-700 border-slate-200';
+  if (label.includes('Cancer'))    return 'bg-red-50 text-red-700 border-red-200';
+  if (label.includes('OPMD'))      return 'bg-pink-50 text-pink-700 border-pink-200';
+  if (label.includes('Variation')) return 'bg-amber-50 text-amber-700 border-amber-200';
+  if (label.includes('Abnormal'))  return 'bg-red-50 text-red-700 border-red-200';
+  if (label.includes('Normal'))    return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+  return 'bg-slate-100 text-slate-700 border-slate-200';
+};
+
 const Reports = () => {
   const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
+  const ORAL_API_URL   = import.meta.env.VITE_ORAL_API_URL   || 'http://localhost:8001';
   const { user, loading: authLoading } = useAuth();
+
+  const [module, setModule] = useState('cavity'); // 'cavity' | 'oral'
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
@@ -22,39 +46,40 @@ const Reports = () => {
   const [selectedReport, setSelectedReport] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
 
-  const fetchReports = async (currentFilter) => {
+  const baseUrl = module === 'cavity' ? CAVITY_API_URL : ORAL_API_URL;
+
+  const fetchReports = async (currentFilter, currentModule) => {
     setLoading(true);
     setDbError(null);
     try {
       const headers = await authHeaders();
-      const response = await fetch(`${CAVITY_API_URL}/api/reports?filter=${currentFilter}`, {
-        headers,
-      });
-      if (!response.ok) throw new Error('Failed to load DB');
+      const url = currentModule === 'cavity' ? CAVITY_API_URL : ORAL_API_URL;
+      const response = await fetch(`${url}/api/reports?filter=${currentFilter}`, { headers });
+      if (!response.ok) throw new Error('Failed to load');
       const data = await response.json();
       setReports(data);
     } catch (err) {
-      setDbError("Unable to connect to the local SQLite database.");
+      setDbError(`Unable to load ${currentModule} reports. Is the backend running?`);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    if (authLoading) return;        // wait until we know who the user is
-    if (!user) {                    // logged out → show empty, don't even call the API
+    if (authLoading) return;
+    if (!user) {
       setReports([]);
       setLoading(false);
       return;
     }
-    fetchReports(filter);
-  }, [filter, user, authLoading]);
+    fetchReports(filter, module);
+  }, [filter, module, user, authLoading]);
 
   const handleDelete = async () => {
     if (!deleteId) return;
     try {
       const headers = await authHeaders();
-      const response = await fetch(`${CAVITY_API_URL}/api/reports/${deleteId}`, {
+      const response = await fetch(`${baseUrl}/api/reports/${deleteId}`, {
         method: 'DELETE',
         headers,
       });
@@ -71,16 +96,13 @@ const Reports = () => {
     let filtered = reports;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
-      filtered = filtered.filter(r => 
-        r.id.toString().includes(q) || 
-        r.summary.toLowerCase().includes(q)
-      );
+      filtered = filtered.filter(r => r.id.toString().includes(q) || reportSearchText(r).includes(q));
     }
-    
-    return filtered.sort((a, b) => {
-      if (sortOrder === 'newest') return new Date(b.date_time) - new Date(a.date_time);
-      if (sortOrder === 'oldest') return new Date(a.date_time) - new Date(b.date_time);
-      if (sortOrder === 'highest_confidence') return b.confidence - a.confidence;
+
+    return [...filtered].sort((a, b) => {
+      if (sortOrder === 'newest') return new Date(reportDate(b)) - new Date(reportDate(a));
+      if (sortOrder === 'oldest') return new Date(reportDate(a)) - new Date(reportDate(b));
+      if (sortOrder === 'highest_confidence') return reportConfidence(b) - reportConfidence(a);
       return 0;
     });
   };
@@ -242,24 +264,44 @@ const Reports = () => {
   return (
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} className="space-y-6 max-w-7xl mx-auto pb-10">
       
-      {/* Header & Filters */}
+      {/* Header & Module Tabs */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100 gap-4">
         <div>
           <h2 className="text-2xl font-bold text-slate-800">Prediction History</h2>
-          <p className="text-slate-500 mt-1">Locally secured SQLite anomaly reports generated by the cavity detection module.</p>
+          <p className="text-slate-500 mt-1">
+            {module === 'cavity'
+              ? 'Cavity detection reports — YOLO bounding boxes and saliency heatmaps.'
+              : 'Oral screening reports — binary + disease classification with Grad-CAM++ heatmaps.'}
+          </p>
         </div>
-        
-        <div className="flex flex-wrap sm:flex-nowrap bg-slate-100 p-1 rounded-xl w-full md:w-auto gap-1">
-          {['all', 'today', 'week', 'month'].map((f) => (
-            <button 
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold capitalize transition-all text-center ${filter === f ? 'bg-white shadow pointer-events-none text-sky-600' : 'text-slate-500 hover:text-slate-700'}`}
-            >
-              {f === 'week' ? 'This Week' : (f === 'month' ? 'This Month' : f)}
-            </button>
-          ))}
+
+        <div className="flex bg-slate-100 p-1 rounded-xl w-full md:w-auto gap-1">
+          <button
+            onClick={() => { setModule('cavity'); setSelectedReport(null); }}
+            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all ${module === 'cavity' ? 'bg-white shadow pointer-events-none text-sky-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            Cavity
+          </button>
+          <button
+            onClick={() => { setModule('oral'); setSelectedReport(null); }}
+            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold transition-all ${module === 'oral' ? 'bg-white shadow pointer-events-none text-teal-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            Oral
+          </button>
         </div>
+      </div>
+
+      {/* Date filters */}
+      <div className="flex flex-wrap sm:flex-nowrap bg-slate-100 p-1 rounded-xl w-full md:w-fit gap-1">
+        {['all', 'today', 'week', 'month'].map((f) => (
+          <button
+            key={f}
+            onClick={() => setFilter(f)}
+            className={`flex-1 sm:flex-none px-4 py-2 rounded-lg text-sm font-semibold capitalize transition-all text-center ${filter === f ? 'bg-white shadow pointer-events-none text-sky-600' : 'text-slate-500 hover:text-slate-700'}`}
+          >
+            {f === 'week' ? 'This Week' : (f === 'month' ? 'This Month' : f)}
+          </button>
+        ))}
       </div>
 
       {/* Advanced Filters: Search and Sort */}
@@ -315,23 +357,27 @@ const Reports = () => {
          <div className="bg-slate-50 border border-slate-200 border-dashed p-12 rounded-2xl flex flex-col items-center justify-center text-center">
           <Search className="w-12 h-12 mb-3 text-slate-300" />
           <h3 className="text-lg font-bold text-slate-700">No Reports Found</h3>
-          <p className="text-slate-500">Run a cavity detection scan or adjust your search filters.</p>
+          <p className="text-slate-500">
+            {module === 'cavity'
+              ? 'Run a cavity detection scan or adjust your search filters.'
+              : 'Run an oral screening analysis or adjust your search filters.'}
+          </p>
         </div>
       )}
 
-      {/* Grid */}
-      {!loading && !dbError && processedReports.length > 0 && (
+      {/* Cavity Grid */}
+      {module === 'cavity' && !loading && !dbError && processedReports.length > 0 && (
         <motion.div variants={staggerContainer} initial="initial" animate="in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <AnimatePresence>
             {processedReports.map((r) => (
-              <motion.div 
+              <motion.div
                 layout
-                key={r.id} 
-                variants={cardVariants} 
+                key={r.id}
+                variants={cardVariants}
                 initial="initial" animate="in" exit={{ opacity: 0, scale: 0.9 }}
                 className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
               >
-                
+
                 <div className="flex bg-slate-50 p-3 items-center justify-between border-b border-slate-100">
                   <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Report #{r.id}</span>
                   <span className="flex items-center text-xs font-medium text-slate-500"><Calendar className="w-3.5 h-3.5 mr-1"/> {new Date(r.date_time).toLocaleDateString()}</span>
@@ -378,14 +424,78 @@ const Reports = () => {
         </motion.div>
       )}
 
-      {/* View Modal */}
+      {/* Oral Grid */}
+      {module === 'oral' && !loading && !dbError && processedReports.length > 0 && (
+        <motion.div variants={staggerContainer} initial="initial" animate="in" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <AnimatePresence>
+            {processedReports.map((r) => {
+              const conf = (r.disease_confidence ?? r.binary_confidence ?? 0) * 100;
+              return (
+                <motion.div
+                  layout
+                  key={r.id}
+                  variants={cardVariants}
+                  initial="initial" animate="in" exit={{ opacity: 0, scale: 0.9 }}
+                  className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+                >
+                  <div className="flex bg-slate-50 p-3 items-center justify-between border-b border-slate-100">
+                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Report #{r.id}</span>
+                    <span className="flex items-center text-xs font-medium text-slate-500"><Calendar className="w-3.5 h-3.5 mr-1"/> {new Date(r.created_at).toLocaleDateString()}</span>
+                  </div>
+
+                  <div className="flex h-36 bg-slate-900 border-b border-slate-200">
+                    <div className="flex-1 border-r border-slate-800 p-1 relative">
+                      <span className="absolute top-1 left-1 bg-black/60 text-[9px] text-white px-1.5 rounded uppercase font-bold tracking-widest z-10">Original</span>
+                      <img src={`data:image/jpeg;base64,${r.original_img}`} alt="orig" className="w-full h-full object-contain" />
+                    </div>
+                    <div className="flex-1 p-1 flex items-center justify-center relative">
+                      <span className="absolute top-1 left-1 bg-teal-600/80 text-[9px] text-white px-1.5 rounded uppercase font-bold tracking-widest z-10">Grad-CAM</span>
+                      {r.heatmap_img
+                        ? <img src={`data:image/jpeg;base64,${r.heatmap_img}`} alt="heatmap" className="w-full h-full object-contain" />
+                        : <span className="text-slate-500 text-xs">No heatmap</span>}
+                    </div>
+                  </div>
+
+                  <div className="p-5 flex-1">
+                    <div className={`inline-flex items-center text-xs font-bold uppercase tracking-wider px-2 py-1 rounded border mb-3 ${verdictTone(r.final_label)}`}>
+                      {r.final_label}
+                    </div>
+                    <h4 className="text-sm font-semibold text-slate-800 line-clamp-1" title={r.filename}>{r.filename || 'image'}</h4>
+                    <div className="mt-4 flex items-center space-x-4 border-t border-slate-100 pt-4">
+                      <div className="flex-1">
+                        <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Confidence</p>
+                        <p className="text-lg font-black text-slate-800">{conf.toFixed(1)}%</p>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-[10px] text-slate-400 font-bold uppercase mb-0.5">Stage 1</p>
+                        <p className="text-sm font-bold text-slate-700">{r.binary_class}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-slate-100 p-2 flex gap-1 bg-slate-50">
+                    <button onClick={() => setSelectedReport(r)} className="flex-1 flex items-center justify-center py-2 text-sm font-semibold text-slate-600 hover:bg-slate-200 hover:text-slate-800 transition-colors rounded">
+                      <Eye className="w-4 h-4 mr-1.5" /> View
+                    </button>
+                    <button onClick={() => setDeleteId(r.id)} className="flex items-center justify-center py-2 px-3 text-sm font-semibold text-red-500 hover:bg-red-50 transition-colors rounded" title="Delete">
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </motion.div>
+      )}
+
+      {/* Cavity View Modal */}
       <AnimatePresence>
-        {selectedReport && (
-          <motion.div 
+        {module === 'cavity' && selectedReport && (
+          <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4"
           >
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
               className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-[90vh]"
             >
@@ -417,6 +527,96 @@ const Reports = () => {
                       <p className="text-xs opacity-75 mt-0.5">Model Confidence: {(selectedReport.confidence * 100).toFixed(1)}%</p>
                     </div>
                  </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Oral View Modal */}
+      <AnimatePresence>
+        {module === 'oral' && selectedReport && (
+          <motion.div
+            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white max-w-4xl w-full rounded-2xl shadow-2xl flex flex-col overflow-hidden max-h-[90vh]"
+            >
+              <div className="p-4 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <h3 className="font-bold text-lg text-slate-800 flex items-center"><FileText className="w-5 h-5 mr-2 text-teal-600" /> Report #{selectedReport.id}</h3>
+                <button onClick={() => setSelectedReport(null)} className="text-slate-400 hover:text-slate-700 bg-white shadow-sm p-1.5 rounded-lg border border-slate-200 font-bold">Close X</button>
+              </div>
+              <div className="p-6 overflow-y-auto">
+                {/* Verdict banner */}
+                <div className={`p-4 rounded-xl border flex items-start gap-4 mb-6 ${verdictTone(selectedReport.final_label)}`}>
+                  <div>
+                    <h4 className="font-bold text-lg">{selectedReport.final_label}</h4>
+                    <p className="text-xs opacity-75 mt-1">File: {selectedReport.filename || 'image'}</p>
+                    <p className="text-xs opacity-75">Date: {new Date(selectedReport.created_at).toLocaleString()}</p>
+                  </div>
+                </div>
+
+                {/* Images */}
+                <div className="flex flex-col md:flex-row gap-6 mb-6">
+                  <div className="flex-1">
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2">Original</h4>
+                    <img src={`data:image/jpeg;base64,${selectedReport.original_img}`} className="w-full rounded border border-slate-200" alt="Original" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xs font-bold text-teal-600 uppercase tracking-widest mb-2">Grad-CAM++</h4>
+                    {selectedReport.heatmap_img
+                      ? <img src={`data:image/jpeg;base64,${selectedReport.heatmap_img}`} className="w-full rounded border border-teal-200" alt="Heatmap" />
+                      : <div className="text-slate-500 text-sm bg-slate-50 border border-slate-200 rounded p-6 text-center">No heatmap available</div>}
+                  </div>
+                </div>
+
+                {/* Probability bars */}
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Stage 1 — Binary</h4>
+                    <div className="space-y-2">
+                      {['Normal', 'Abnormal'].map((name, i) => {
+                        const pct = ((selectedReport.binary_probs?.[i] ?? 0) * 100);
+                        return (
+                          <div key={name}>
+                            <div className="flex justify-between text-xs mb-1">
+                              <span className="font-semibold text-slate-700">{name}</span>
+                              <span className="font-mono text-slate-500">{pct.toFixed(1)}%</span>
+                            </div>
+                            <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                              <div className={`h-full ${name === 'Abnormal' ? 'bg-red-500' : 'bg-emerald-500'}`} style={{ width: `${pct}%` }} />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {selectedReport.disease_probs && (
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Stage 2 — Disease</h4>
+                      <div className="space-y-2">
+                        {['Variation', 'OPMD', 'Oral Cancer'].map((name, i) => {
+                          const pct = ((selectedReport.disease_probs?.[i] ?? 0) * 100);
+                          const tone = name === 'Oral Cancer' ? 'bg-red-500' : name === 'OPMD' ? 'bg-pink-500' : 'bg-amber-500';
+                          return (
+                            <div key={name}>
+                              <div className="flex justify-between text-xs mb-1">
+                                <span className="font-semibold text-slate-700">{name}</span>
+                                <span className="font-mono text-slate-500">{pct.toFixed(1)}%</span>
+                              </div>
+                              <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                                <div className={`h-full ${tone}`} style={{ width: `${pct}%` }} />
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.div>

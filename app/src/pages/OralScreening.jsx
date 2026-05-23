@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, Activity, Layers, X, ScanEye, Microscope } from 'lucide-react';
+import { authHeaders } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext';
 
 const ORAL_API_URL = import.meta.env.VITE_ORAL_API_URL || 'http://localhost:8001';
 const MAX_FILE_SIZE_MB = 10;
@@ -136,6 +138,7 @@ function ResultCard({ pred, preview }) {
 }
 
 const OralScreening = () => {
+  const { user } = useAuth();
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -184,18 +187,20 @@ const OralScreening = () => {
 
   const analyze = async () => {
     if (!files.length) return;
+    if (!user) { setError('You must be signed in to run analysis.'); return; }
     setLoading(true); setError(null); setResults(null);
     try {
+      const headers = await authHeaders();
       if (files.length === 1) {
         const fd = new FormData(); fd.append('file', files[0].file);
-        const r = await fetch(`${ORAL_API_URL}/predict`, { method: 'POST', body: fd });
+        const r = await fetch(`${ORAL_API_URL}/predict`, { method: 'POST', headers, body: fd });
         if (!r.ok) throw new Error(`Server error ${r.status}`);
         const data = await r.json();
         setResults({ predictions: [{ ...data, filename: files[0].file.name }] });
       } else {
         const fd = new FormData();
         for (const f of files) fd.append('files', f.file);
-        const r = await fetch(`${ORAL_API_URL}/predict_batch`, { method: 'POST', body: fd });
+        const r = await fetch(`${ORAL_API_URL}/predict_batch`, { method: 'POST', headers, body: fd });
         if (!r.ok) throw new Error(`Server error ${r.status}`);
         setResults(await r.json());
       }
