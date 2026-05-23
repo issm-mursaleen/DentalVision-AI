@@ -73,6 +73,8 @@ const AnimatedCounter = ({ value, suffix = '' }) => {
   return <span>{isFloat ? displayValue.toFixed(1) : Math.floor(displayValue)}{suffix}</span>;
 };
 
+const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
+
 const Dashboard = () => {
   const [stats, setStats] = useState(null);
   const [charts, setCharts] = useState(null);
@@ -83,8 +85,8 @@ const Dashboard = () => {
     try {
       setIsRefreshing(true);
       const [statsRes, chartsRes] = await Promise.all([
-        fetch('http://localhost:8000/api/dashboard/stats'),
-        fetch('http://localhost:8000/api/dashboard/charts')
+        fetch(`${CAVITY_API_URL}/api/dashboard/stats`),
+        fetch(`${CAVITY_API_URL}/api/dashboard/charts`)
       ]);
       const statsData = await statsRes.json();
       const chartsData = await chartsRes.json();

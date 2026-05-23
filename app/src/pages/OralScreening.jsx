@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, Activity, Layers, X, ScanEye, Microscope } from 'lucide-react';
 
-const ORAL_API_URL = 'http://127.0.0.1:8001';
+const ORAL_API_URL = import.meta.env.VITE_ORAL_API_URL || 'http://localhost:8001';
 const MAX_FILE_SIZE_MB = 10;
 const ALLOWED_TYPES = ['image/jpeg', 'image/jpg', 'image/png', 'image/bmp', 'image/webp'];
 const MAX_FILES = 12;

@@ -8,6 +8,7 @@ const staggerContainer = { in: { transition: { staggerChildren: 0.1 } } };
 const cardVariants = { initial: { opacity: 0, scale: 0.95 }, in: { opacity: 1, scale: 1 } };
 
 const Reports = () => {
+  const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
@@ -22,7 +23,7 @@ const Reports = () => {
     setLoading(true);
     setDbError(null);
     try {
-      const response = await fetch(`http://localhost:8000/api/reports?filter=${currentFilter}`);
+      const response = await fetch(`${CAVITY_API_URL}/api/reports?filter=${currentFilter}`);
       if (!response.ok) throw new Error('Failed to load DB');
       const data = await response.json();
       setReports(data);
@@ -40,7 +41,7 @@ const Reports = () => {
   const handleDelete = async () => {
     if (!deleteId) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/reports/${deleteId}`, {
+      const response = await fetch(`${CAVITY_API_URL}/api/reports/${deleteId}`, {
         method: 'DELETE',
       });
       if (response.ok) {

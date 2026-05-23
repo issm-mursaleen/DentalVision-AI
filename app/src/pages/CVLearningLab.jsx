@@ -4,6 +4,8 @@ import { Upload, Activity, BookOpen, SlidersHorizontal, ArrowRightLeft, Image as
 
 const pageVariants = { initial: { opacity: 0, y: 15 }, in: { opacity: 1, y: 0 }, out: { opacity: 0, y: -15 } };
 
+const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
+
 const techniquesConfig = {
   enhancement: [
     { id: 'grayscale', name: 'Grayscale Conversion', desc: 'Converts color imagery to shades of gray. In dentistry, most X-rays are natively grayscale to emphasize bone density, but applying this ensures standard baseline processing.', params: [] },
@@ -97,7 +99,7 @@ const CVLearningLab = () => {
     formData.append('param2', params.param2);
 
     try {
-      const response = await fetch('http://localhost:8000/api/cv_lab', {
+      const response = await fetch(`${CAVITY_API_URL}/api/cv_lab`, {
         method: 'POST',
         body: formData,
       });

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, Activity, CheckCircle, AlertTriangle, Image as ImageIcon, X, Sparkles, Layers, ScanEye, Download, ShieldAlert, CheckCircle2, AlertCircle } from 'lucide-react';
 import html2pdf from 'html2pdf.js';
 
+const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
+
 const pageVariants = { initial: { opacity: 0, y: 15 }, in: { opacity: 1, y: 0 }, out: { opacity: 0, y: -15 } };
 const staggerContainer = { in: { transition: { staggerChildren: 0.15 } } };
 const cardVariants = { initial: { opacity: 0, y: 20 }, in: { opacity: 1, y: 0 } };
@@ -69,7 +71,7 @@ const CavityDetection = () => {
       // Step 1: Pre-check Pipeline
       setIsAnalyzingQuality(true);
       try {
-        const qualityRes = await fetch('http://localhost:8000/api/image-quality', {
+        const qualityRes = await fetch(`${CAVITY_API_URL}/api/image-quality`, {
           method: 'POST',
           body: formData,
         });
@@ -92,7 +94,7 @@ const CavityDetection = () => {
     // Step 2: Detection Pipeline
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/api/detect_cavity', {
+      const response = await fetch(`${CAVITY_API_URL}/api/detect_cavity`, {
         method: 'POST',
         body: formData, 
       });
