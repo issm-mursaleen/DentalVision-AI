@@ -23,6 +23,9 @@ RUN pip install --no-cache-dir --disable-pip-version-check -r requirements-api.t
 # Copy ML modules
 COPY ml/ ./ml/
 
+# Copy models
+COPY models/ ./models/
+
 # Copy backend
 COPY backends/ ./backends/
 

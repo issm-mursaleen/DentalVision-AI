@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy required folders
 COPY backends/cavity/ /app/backends/cavity/
+COPY models/ /app/models/
 COPY .env.example /app/.env
 
 # Add application path to Python Path

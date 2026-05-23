@@ -10,11 +10,6 @@ dist/
 build/
 .env
 
-# Model weights (too large for GitHub — keep locally)
-models/
-*.pth
-*.pkl
-*.pt
 
 # Datasets (too large for GitHub)
 SMART-OM/

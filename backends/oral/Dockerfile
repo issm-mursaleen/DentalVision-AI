@@ -18,6 +18,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy required folders
 COPY backends/oral/ /app/backends/oral/
 COPY ml/ /app/ml/
+COPY models/ /app/models/
 COPY .env.example /app/.env
 
 # Add application path to Python Path
