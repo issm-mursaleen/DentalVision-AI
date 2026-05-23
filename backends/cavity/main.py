@@ -106,7 +106,7 @@ def read_root():
 
 
 @app.post("/api/detect_cavity", response_model=InferenceResult)
-async def detect_cavity(file: UploadFile = File(...)):
+async def detect_cavity(file: UploadFile = File(...), user_id: str = Form(None)):
     if not file.content_type.startswith('image/'):
         raise HTTPException(status_code=400, detail="File provided is not an image.")
     try:
@@ -141,7 +141,7 @@ async def detect_cavity(file: UploadFile = File(...)):
         base64_heat = base64.b64encode(buf).decode('utf-8')
 
         # Persist to Supabase
-        sb.table(TABLE).insert({
+        report_data = {
             "original_img":    base64_orig,
             "annotated_img":   base64_ann,
             "heatmap_img":     base64_heat,
@@ -149,7 +149,11 @@ async def detect_cavity(file: UploadFile = File(...)):
             "cavity_count":    cavity_count,
             "cavity_detected": cavity_detected,
             "summary":         msg,
-        }).execute()
+        }
+        if user_id:
+            report_data["user_id"] = user_id
+            
+        sb.table(TABLE).insert(report_data).execute()
 
         return InferenceResult(
             cavity_detected=cavity_detected,
