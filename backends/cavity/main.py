@@ -1,4 +1,4 @@
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
@@ -33,6 +33,31 @@ if not SUPABASE_URL or not SUPABASE_KEY:
 
 sb: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 TABLE = "cavity_reports"
+
+
+# ── Auth dependency ───────────────────────────────────────────────────────────
+def get_current_user_id(authorization: str = Header(None)) -> str:
+    """
+    Verify the Supabase JWT from the Authorization header and return the
+    authenticated user's id. Raises 401 if missing/invalid.
+
+    The service role key bypasses Supabase RLS, so the only place we can
+    enforce per-user isolation is here. Every endpoint that reads or writes
+    `cavity_reports` must depend on this.
+    """
+    if not authorization or not authorization.lower().startswith("bearer "):
+        raise HTTPException(status_code=401, detail="Missing bearer token")
+    token = authorization.split(" ", 1)[1].strip()
+    try:
+        resp = sb.auth.get_user(token)
+        user = getattr(resp, "user", None)
+        if not user or not getattr(user, "id", None):
+            raise HTTPException(status_code=401, detail="Invalid token")
+        return user.id
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=401, detail=f"Auth failed: {e}")
 
 # ── YOLO model ────────────────────────────────────────────────────────────────
 MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'models', 'cavity.pt')
@@ -106,7 +131,10 @@ def read_root():
 
 
 @app.post("/api/detect_cavity", response_model=InferenceResult)
-async def detect_cavity(file: UploadFile = File(...), user_id: str = Form(None)):
+async def detect_cavity(
+    file: UploadFile = File(...),
+    user_id: str = Depends(get_current_user_id),
+):
     if not file.content_type.startswith('image/'):
         raise HTTPException(status_code=400, detail="File provided is not an image.")
     try:
@@ -140,7 +168,7 @@ async def detect_cavity(file: UploadFile = File(...), user_id: str = Form(None))
         _, buf = cv2.imencode('.jpg', heatmap_img)
         base64_heat = base64.b64encode(buf).decode('utf-8')
 
-        # Persist to Supabase
+        # Persist to Supabase (always tagged with the authenticated user)
         report_data = {
             "original_img":    base64_orig,
             "annotated_img":   base64_ann,
@@ -149,10 +177,8 @@ async def detect_cavity(file: UploadFile = File(...), user_id: str = Form(None))
             "cavity_count":    cavity_count,
             "cavity_detected": cavity_detected,
             "summary":         msg,
+            "user_id":         user_id,
         }
-        if user_id:
-            report_data["user_id"] = user_id
-            
         sb.table(TABLE).insert(report_data).execute()
 
         return InferenceResult(
@@ -171,10 +197,10 @@ async def detect_cavity(file: UploadFile = File(...), user_id: str = Form(None))
 
 
 @app.get("/api/reports")
-def get_reports(filter: str = 'all'):
+def get_reports(filter: str = 'all', user_id: str = Depends(get_current_user_id)):
     q = sb.table(TABLE).select(
         "id, created_at, original_img, annotated_img, heatmap_img, confidence, cavity_count, summary"
-    )
+    ).eq("user_id", user_id)
     if filter == 'today':
         q = q.gte("created_at", _start_of_day_utc())
     elif filter == 'week':
@@ -199,16 +225,28 @@ def get_reports(filter: str = 'all'):
 
 
 @app.delete("/api/reports/{report_id}")
-def delete_report(report_id: int):
-    res = sb.table(TABLE).delete().eq("id", report_id).execute()
+def delete_report(report_id: int, user_id: str = Depends(get_current_user_id)):
+    res = (
+        sb.table(TABLE)
+        .delete()
+        .eq("id", report_id)
+        .eq("user_id", user_id)
+        .execute()
+    )
     if not res.data:
         raise HTTPException(status_code=404, detail="Report not found")
     return {"message": "Report deleted successfully"}
 
 
 @app.get("/api/dashboard/stats")
-def get_dashboard_stats():
-    all_rows = sb.table(TABLE).select("confidence, cavity_count, created_at").execute().data
+def get_dashboard_stats(user_id: str = Depends(get_current_user_id)):
+    all_rows = (
+        sb.table(TABLE)
+        .select("confidence, cavity_count, created_at")
+        .eq("user_id", user_id)
+        .execute()
+        .data
+    )
 
     today_start  = _start_of_day_utc()
     week_start   = _days_ago_utc(7)
@@ -238,8 +276,14 @@ def get_dashboard_stats():
 
 
 @app.get("/api/dashboard/charts")
-def get_dashboard_charts():
-    all_rows = sb.table(TABLE).select("confidence, cavity_count, created_at").execute().data
+def get_dashboard_charts(user_id: str = Depends(get_current_user_id)):
+    all_rows = (
+        sb.table(TABLE)
+        .select("confidence, cavity_count, created_at")
+        .eq("user_id", user_id)
+        .execute()
+        .data
+    )
     now = datetime.now(timezone.utc)
 
     # Weekly trend (last 7 days)

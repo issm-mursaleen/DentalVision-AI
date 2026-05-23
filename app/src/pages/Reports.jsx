@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FileText, Download, Trash2, Calendar, Search, AlertCircle, Eye, Activity, CheckCircle, AlertTriangle, ArrowUpDown, Filter } from 'lucide-react';
 import html2pdf from 'html2pdf.js';
+import { authHeaders } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext';
 
 const pageVariants = { initial: { opacity: 0, y: 15 }, in: { opacity: 1, y: 0 }, out: { opacity: 0, y: -15 } };
 const staggerContainer = { in: { transition: { staggerChildren: 0.1 } } };
@@ -9,13 +11,14 @@ const cardVariants = { initial: { opacity: 0, scale: 0.95 }, in: { opacity: 1, s
 
 const Reports = () => {
   const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
+  const { user, loading: authLoading } = useAuth();
   const [reports, setReports] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [sortOrder, setSortOrder] = useState('newest');
   const [dbError, setDbError] = useState(null);
-  
+
   const [selectedReport, setSelectedReport] = useState(null);
   const [deleteId, setDeleteId] = useState(null);
 
@@ -23,7 +26,10 @@ const Reports = () => {
     setLoading(true);
     setDbError(null);
     try {
-      const response = await fetch(`${CAVITY_API_URL}/api/reports?filter=${currentFilter}`);
+      const headers = await authHeaders();
+      const response = await fetch(`${CAVITY_API_URL}/api/reports?filter=${currentFilter}`, {
+        headers,
+      });
       if (!response.ok) throw new Error('Failed to load DB');
       const data = await response.json();
       setReports(data);
@@ -35,14 +41,22 @@ const Reports = () => {
   };
 
   useEffect(() => {
+    if (authLoading) return;        // wait until we know who the user is
+    if (!user) {                    // logged out → show empty, don't even call the API
+      setReports([]);
+      setLoading(false);
+      return;
+    }
     fetchReports(filter);
-  }, [filter]);
+  }, [filter, user, authLoading]);
 
   const handleDelete = async () => {
     if (!deleteId) return;
     try {
+      const headers = await authHeaders();
       const response = await fetch(`${CAVITY_API_URL}/api/reports/${deleteId}`, {
         method: 'DELETE',
+        headers,
       });
       if (response.ok) {
         setReports(reports.filter(r => r.id !== deleteId));

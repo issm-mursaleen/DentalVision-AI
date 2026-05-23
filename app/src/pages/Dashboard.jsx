@@ -15,13 +15,13 @@ import {
   Calendar,
   AlertTriangle
 } from 'lucide-react';
-import { 
-  AreaChart, 
-  Area, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip as RechartsTooltip, 
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip as RechartsTooltip,
   ResponsiveContainer,
   BarChart,
   Bar,
@@ -30,6 +30,8 @@ import {
   Cell,
   Legend
 } from 'recharts';
+import { authHeaders } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext';
 
 const pageVariants = { initial: { opacity: 0, y: 15 }, in: { opacity: 1, y: 0 }, out: { opacity: 0, y: -15 }};
 const cardVariants = { initial: { opacity: 0, scale: 0.95 }, in: { opacity: 1, scale: 1 }};
@@ -76,6 +78,7 @@ const AnimatedCounter = ({ value, suffix = '' }) => {
 const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
 
 const Dashboard = () => {
+  const { user, loading: authLoading } = useAuth();
   const [stats, setStats] = useState(null);
   const [charts, setCharts] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -84,9 +87,10 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       setIsRefreshing(true);
+      const headers = await authHeaders();
       const [statsRes, chartsRes] = await Promise.all([
-        fetch(`${CAVITY_API_URL}/api/dashboard/stats`),
-        fetch(`${CAVITY_API_URL}/api/dashboard/charts`)
+        fetch(`${CAVITY_API_URL}/api/dashboard/stats`, { headers }),
+        fetch(`${CAVITY_API_URL}/api/dashboard/charts`, { headers })
       ]);
       const statsData = await statsRes.json();
       const chartsData = await chartsRes.json();
@@ -101,10 +105,18 @@ const Dashboard = () => {
   };
 
   useEffect(() => {
+    if (authLoading) return;
+    if (!user) {
+      setStats(null);
+      setCharts(null);
+      setIsLoading(false);
+      return;
+    }
     fetchData();
     const interval = setInterval(fetchData, 30000); // Auto refresh every 30s
     return () => clearInterval(interval);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user, authLoading]);
 
   const SkeletonCard = () => (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 animate-pulse">

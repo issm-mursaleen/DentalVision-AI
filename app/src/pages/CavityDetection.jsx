@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Upload, Activity, CheckCircle, AlertTriangle, Image as ImageIcon, X, Sparkles, Layers, ScanEye, Download, ShieldAlert, CheckCircle2, AlertCircle } from 'lucide-react';
 import html2pdf from 'html2pdf.js';
+import { authHeaders } from '../lib/supabase';
+import { useAuth } from '../context/AuthContext';
 
 const CAVITY_API_URL = import.meta.env.VITE_CAVITY_API_URL || 'http://localhost:8000';
 
@@ -10,6 +12,7 @@ const staggerContainer = { in: { transition: { staggerChildren: 0.15 } } };
 const cardVariants = { initial: { opacity: 0, y: 20 }, in: { opacity: 1, y: 0 } };
 
 const CavityDetection = () => {
+  const { user } = useAuth();
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -60,7 +63,12 @@ const CavityDetection = () => {
   const handleUpload = async (e, ignoreQuality = false) => {
     if (e) e.preventDefault();
     if (!file) return;
-    
+
+    if (!user) {
+      alert('You must be signed in to run detection.');
+      return;
+    }
+
     setResult(null);
     setQualityResult(null);
 
@@ -68,18 +76,18 @@ const CavityDetection = () => {
     formData.append('file', file);
 
     if (!ignoreQuality) {
-      // Step 1: Pre-check Pipeline
+      // Step 1: Pre-check Pipeline (no auth required — stateless)
       setIsAnalyzingQuality(true);
       try {
         const qualityRes = await fetch(`${CAVITY_API_URL}/api/image-quality`, {
           method: 'POST',
           body: formData,
         });
-        
+
         if (!qualityRes.ok) throw new Error('Quality API Error');
-        
+
         const qData = await qualityRes.json();
-        
+
         if (qData.is_poor_quality) {
           setQualityResult(qData);
           setIsAnalyzingQuality(false);
@@ -91,22 +99,24 @@ const CavityDetection = () => {
       setIsAnalyzingQuality(false);
     }
 
-    // Step 2: Detection Pipeline
+    // Step 2: Detection Pipeline (auth required so backend tags row with user_id)
     setLoading(true);
     try {
+      const headers = await authHeaders();
       const response = await fetch(`${CAVITY_API_URL}/api/detect_cavity`, {
         method: 'POST',
-        body: formData, 
+        headers,
+        body: formData,
       });
 
       if (!response.ok) throw new Error('API Error');
-      
+
       const data = await response.json();
       setResult(data);
     } catch (err) {
-      setResult({ 
-        cavity_detected: false, 
-        confidence_score: 0, 
+      setResult({
+        cavity_detected: false,
+        confidence_score: 0,
         cavity_count: 0,
         message: "Error processing the image via backend. Ensure the python server is running.",
         annotated_image_base64: null,
