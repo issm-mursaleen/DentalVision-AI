@@ -121,21 +121,21 @@ const Dashboard = () => {
     <motion.div initial="initial" animate="in" exit="out" variants={pageVariants} className="space-y-6 max-w-7xl mx-auto pb-10">
       
       {/* Header */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-slate-100">
         <div>
-          <h2 className="text-2xl font-bold text-slate-800">Dashboard Overview</h2>
-          <p className="text-slate-500 mt-1">DentalVision AI performance and real-time analytics.</p>
+          <h2 className="text-xl md:text-2xl font-bold text-slate-800">Dashboard Overview</h2>
+          <p className="text-slate-500 mt-1 text-sm md:text-base">DentalVision AI performance and real-time analytics.</p>
         </div>
-        <div className="mt-4 md:mt-0 flex gap-3">
+        <div className="mt-4 md:mt-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
           <button 
             onClick={fetchData}
             disabled={isLoading || isRefreshing}
-            className="bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 px-4 py-2.5 rounded-lg font-medium transition-colors flex items-center shadow-sm"
+            className="w-full sm:w-auto justify-center bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 px-4 py-2.5 rounded-lg font-medium transition-colors flex items-center shadow-sm"
           >
             <RefreshCw className={`w-4 h-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
             Refresh
           </button>
-          <NavLink to="/cavity-detection" className="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors flex items-center shadow-sm shadow-sky-200">
+          <NavLink to="/cavity-detection" className="w-full sm:w-auto justify-center bg-sky-600 hover:bg-sky-700 text-white px-5 py-2.5 rounded-lg font-medium transition-colors flex items-center shadow-sm shadow-sky-200">
             <Upload className="w-4 h-4 mr-2" />
             New Scan
           </NavLink>

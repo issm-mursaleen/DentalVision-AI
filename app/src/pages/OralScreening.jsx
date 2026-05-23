@@ -280,12 +280,12 @@ const OralScreening = () => {
 
           {/* Thumbnails */}
           {files.length > 0 && (
-            <div className="grid grid-cols-3 gap-2 mb-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-4">
               {files.map(f => (
                 <div key={f.id} className="relative aspect-square rounded-lg overflow-hidden bg-slate-100 border border-slate-200 group">
                   <img src={f.preview} alt={f.file.name} className="w-full h-full object-cover" />
                   <button onClick={(e) => { e.stopPropagation(); removeFile(f.id); }}
-                    className="absolute top-1 right-1 w-5 h-5 rounded-full bg-black/60 text-white text-xs flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500">
+                    className="absolute top-1 right-1 w-6 h-6 sm:w-5 sm:h-5 rounded-full bg-black/60 text-white text-xs flex items-center justify-center sm:opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-500">
                     ×
                   </button>
                 </div>

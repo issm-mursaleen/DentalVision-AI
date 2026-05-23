@@ -243,9 +243,9 @@ const CVLearningLab = () => {
                 )}
              </div>
              
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-[400px]">
+             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-auto md:h-[400px]">
                 {/* Original */}
-                <div className="bg-slate-900 rounded-xl flex items-center justify-center relative overflow-hidden border border-slate-200">
+                <div className="bg-slate-900 rounded-xl flex items-center justify-center relative overflow-hidden border border-slate-200 min-h-[250px] md:min-h-0">
                   <div className="absolute top-0 left-0 bg-black/60 text-white px-3 py-1 text-xs font-semibold rounded-br-lg backdrop-blur z-10 block">
                     Original Input
                   </div>
@@ -260,7 +260,7 @@ const CVLearningLab = () => {
                 </div>
 
                 {/* Processed */}
-                <div className="bg-slate-900 rounded-xl flex items-center justify-center relative overflow-hidden border border-slate-200">
+                <div className="bg-slate-900 rounded-xl flex items-center justify-center relative overflow-hidden border border-slate-200 min-h-[250px] md:min-h-0">
                   <div className="absolute top-0 left-0 bg-indigo-600 text-white px-3 py-1 text-xs font-semibold rounded-br-lg backdrop-blur z-10 block">
                     {activeTech?.name} Output
                   </div>

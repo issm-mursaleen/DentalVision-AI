@@ -382,7 +382,7 @@ const CavityDetection = () => {
                   </div>
                 </motion.div>
 
-                <motion.div variants={cardVariants} className="flex gap-4 pt-4">
+                <motion.div variants={cardVariants} className="flex flex-col sm:flex-row gap-4 pt-4">
                   <button 
                     onClick={() => fileInputRef.current?.click()}
                     className="flex-1 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 py-3 rounded-xl font-semibold transition-colors shadow-sm"
@@ -461,7 +461,7 @@ const CavityDetection = () => {
                 </motion.div>
 
                 {/* Metrics & Recap */}
-                <motion.div variants={cardVariants} className="flex gap-4 pt-2">
+                <motion.div variants={cardVariants} className="flex flex-col sm:flex-row gap-4 pt-2">
                   <div className={`flex-1 flex items-center p-4 rounded-xl border ${result.cavity_detected ? 'bg-amber-50 border-amber-200 text-amber-800' : 'bg-emerald-50 border-emerald-200 text-emerald-800'}`}>
                     {result.cavity_detected ? <AlertTriangle className="w-8 h-8 mr-3 text-amber-600 shrink-0" /> : <CheckCircle className="w-8 h-8 mr-3 text-emerald-600 shrink-0" />}
                     <div>
@@ -471,7 +471,7 @@ const CavityDetection = () => {
                     </div>
                   </div>
 
-                  <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-4 flex flex-col justify-center items-center w-36 shrink-0">
+                  <div className="bg-white border border-slate-200 shadow-sm rounded-xl p-4 flex flex-col justify-center items-center w-full sm:w-36 shrink-0">
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Max Confidence</p>
                     <p className="text-2xl font-black text-slate-800">{(result.confidence_score * 100).toFixed(1)}%</p>
                   </div>

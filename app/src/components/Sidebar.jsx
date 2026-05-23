@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, Target, BookOpen, FileText, Info, Stethoscope, Microscope } from 'lucide-react';
+import { LayoutDashboard, Target, BookOpen, FileText, Info, Stethoscope, Microscope, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -17,12 +17,24 @@ const navItems = [
   { name: 'About Project', path: '/about', icon: Info },
 ];
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, setIsOpen }) => {
   return (
-    <aside className="w-64 bg-slate-900 text-white flex flex-col shadow-xl z-20 transition-all duration-300">
-      <div className="h-16 flex items-center px-6 border-b border-slate-800 shrink-0">
-        <Stethoscope className="w-6 h-6 text-sky-400 mr-2" />
-        <span className="text-lg font-bold tracking-wide">DentalVision AI</span>
+    <aside className={cn(
+      "w-64 bg-slate-900 text-white flex flex-col shadow-xl z-30 transition-transform duration-300",
+      "fixed inset-y-0 left-0 md:relative md:translate-x-0",
+      isOpen ? "translate-x-0" : "-translate-x-full"
+    )}>
+      <div className="h-16 flex items-center justify-between px-6 border-b border-slate-800 shrink-0">
+        <div className="flex items-center">
+          <Stethoscope className="w-6 h-6 text-sky-400 mr-2" />
+          <span className="text-lg font-bold tracking-wide">DentalVision AI</span>
+        </div>
+        <button 
+          className="md:hidden text-slate-400 hover:text-white"
+          onClick={() => setIsOpen(false)}
+        >
+          <X className="w-6 h-6" />
+        </button>
       </div>
       <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
         {navItems.map((item) => {
@@ -31,6 +43,7 @@ const Sidebar = () => {
             <NavLink
               key={item.name}
               to={item.path}
+              onClick={() => setIsOpen(false)}
               className={({ isActive }) =>
                 cn(
                   'flex items-center px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 group',
