@@ -20,26 +20,21 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy required folders
 COPY backends/oral/ /app/backends/oral/
 COPY ml/ /app/ml/
-COPY models/ /app/models/
 COPY .env.example /app/.env
 
-# Resolve Git LFS pointer files if present by downloading raw binary weights from GitHub
-RUN if [ -f /app/models/oral-binary.pkl ] && grep -q "version https://git-lfs" /app/models/oral-binary.pkl; then \
-        echo "Downloading oral-binary.pkl from GitHub LFS..." && \
-        curl -L -f -o /app/models/oral-binary.pkl https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-binary.pkl; \
-    fi && \
-    if [ -f /app/models/oral-binary.pth ] && grep -q "version https://git-lfs" /app/models/oral-binary.pth; then \
-        echo "Downloading oral-binary.pth from GitHub LFS..." && \
-        curl -L -f -o /app/models/oral-binary.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-binary.pth; \
-    fi && \
-    if [ -f /app/models/oral-disease.pkl ] && grep -q "version https://git-lfs" /app/models/oral-disease.pkl; then \
-        echo "Downloading oral-disease.pkl from GitHub LFS..." && \
-        curl -L -f -o /app/models/oral-disease.pkl https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pkl; \
-    fi && \
-    if [ -f /app/models/oral-disease.pth ] && grep -q "version https://git-lfs" /app/models/oral-disease.pth; then \
-        echo "Downloading oral-disease.pth from GitHub LFS..." && \
-        curl -L -f -o /app/models/oral-disease.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pth; \
-    fi
+# Download model weights from GitHub LFS
+# Railway's ZIP archive excludes LFS files entirely, so we always download them
+RUN mkdir -p /app/models && \
+    echo "Downloading oral-binary.pkl..." && \
+    curl -L -f -o /app/models/oral-binary.pkl https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-binary.pkl && \
+    echo "Downloading oral-binary.pth..." && \
+    curl -L -f -o /app/models/oral-binary.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-binary.pth && \
+    echo "Downloading oral-disease.pkl..." && \
+    curl -L -f -o /app/models/oral-disease.pkl https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pkl && \
+    echo "Downloading oral-disease.pth..." && \
+    curl -L -f -o /app/models/oral-disease.pth https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/oral-disease.pth && \
+    echo "All oral models downloaded successfully." && \
+    ls -lh /app/models/
 
 # Add application path to Python Path
 ENV PYTHONPATH=/app

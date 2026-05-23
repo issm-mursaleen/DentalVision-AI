@@ -19,14 +19,15 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy required folders
 COPY backends/cavity/ /app/backends/cavity/
-COPY models/ /app/models/
 COPY .env.example /app/.env
 
-# Resolve Git LFS pointer files if present by downloading raw binary weights from GitHub
-RUN if [ -f /app/models/cavity.pt ] && grep -q "version https://git-lfs" /app/models/cavity.pt; then \
-        echo "Downloading cavity.pt from GitHub LFS..." && \
-        curl -L -f -o /app/models/cavity.pt https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/cavity.pt; \
-    fi
+# Download model weights from GitHub LFS
+# Railway's ZIP archive excludes LFS files entirely, so we always download them
+RUN mkdir -p /app/models && \
+    echo "Downloading cavity.pt..." && \
+    curl -L -f -o /app/models/cavity.pt https://media.githubusercontent.com/media/issm-mursaleen/DentalVision-AI/main/models/cavity.pt && \
+    echo "Cavity model downloaded successfully." && \
+    ls -lh /app/models/
 
 # Add application path to Python Path
 ENV PYTHONPATH=/app
